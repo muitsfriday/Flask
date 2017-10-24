@@ -6,15 +6,15 @@ include (__DIR__ . '/Flask.php');
 
 
 $my_ab_test = Flask::create_test ('my-ab-test')->enable(true)
-                    ->add_case ('X', array (
+                    ->add_case ('X', [
                         'default' => true
-                    ))
-                    ->add_case ('Y', array (
+                    ])
+                    ->add_case ('Y', [
                         'weight' => 10
-                    ))
-                    ->add_case ('Z', array (
+                    ])
+                    ->add_case ('Z', [
                         
-                    ))
+                    ])
                     ->create_job ('get_class', function($case){
                         return 'ab-test-class-' . $case;
                     })
